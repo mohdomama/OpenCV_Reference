@@ -9,15 +9,24 @@ while True:
 	hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
 
 	# Nicely detect my yellow shirt
-	lower_yel = np.array([22,70,150])
+	lower_yel = np.array([22,70,100])
 	upper_yel = np.array([37,255,255])
 
 	mask = cv2.inRange(hsv, lower_yel, upper_yel)
 	res = cv2.bitwise_and(frame,frame, mask = mask)
 
-	cv2.imshow("original", frame)
-	cv2.imshow("mask", mask)
+	# Median Blur works best
+	#gauss = cv2.GaussianBlur(res,(15,15),0)
+	median = cv2.medianBlur(res,15)
+	#bilateral = cv2.bilateralFilter(res,15,75,75)
+
+
+	#cv2.imshow("original", frame)
+	#cv2.imshow("mask", mask)
 	cv2.imshow("res", res)
+	#cv2.imshow("gauss", gauss)
+	cv2.imshow("median", median)
+	#cv2.imshow("bilateral", bilateral)
 
 	if cv2.waitKey(1) & 0xFF == ord('q'):
 		break

@@ -2,3 +2,6 @@
 *.avi
 
 static/
+
+# Python
+__pycache__/

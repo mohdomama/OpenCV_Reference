@@ -6,6 +6,7 @@ def call_back(x):
 
 def create(name):
     image = cv2.namedWindow(name)
+    cv2.moveWindow(name, 1000,0)
     cv2.createTrackbar('H_high', name, 255, 255, call_back)
     cv2.createTrackbar('H_low', name, 0, 255, call_back)
     cv2.createTrackbar('S_high', name, 255, 255, call_back)

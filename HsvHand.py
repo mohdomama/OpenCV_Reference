@@ -9,7 +9,7 @@ cap = cv2.VideoCapture(0)
 while True:
 
 	_, frame = cap.read()
-	hsv_img = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
+	hsv_img = cv2.cvtColor(frame, cv2.COLOR_BGR2YCR_CB)
 
 	low, high = extractor.extract('HSV')
 	low = np.array(list(low))

@@ -24,7 +24,7 @@ def back_proj_2D(hsvt, roi_hist, dim, target):
 	cv2.filter2D(dst,-1,disc,dst)
 
 	# threshold and binary AND
-	ret,thresh = cv2.threshold(dst,50,255,0)
+	ret,thresh = cv2.threshold(dst,0,255,cv2.THRESH_BINARY+cv2.THRESH_OTSU)
 	thresh = cv2.merge((thresh,thresh,thresh))
 	return thresh
 
@@ -53,8 +53,8 @@ def back_proj_1D(hsvr, hsvt, dim, target):
 def calculate(roi, target):
 	
 
-	hsvr = cv2.cvtColor(roi,cv2.COLOR_BGR2HSV)
-	hsvt = cv2.cvtColor(target,cv2.COLOR_BGR2HSV)
+	hsvr = cv2.cvtColor(roi,cv2.COLOR_BGR2YCR_CB)
+	hsvt = cv2.cvtColor(target,cv2.COLOR_BGR2YCR_CB)
 
 	roi_hist_0 = calculate_hist_2D(hsvr, [0,1])
 	roi_hist_1 = calculate_hist_2D(hsvr, [1, 2])

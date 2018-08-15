@@ -3,5 +3,9 @@
 
 static/
 
+# ML Models
+*.caffemodel
+*.pb
+
 # Python
 __pycache__/

@@ -6,6 +6,8 @@ static/
 # ML Models
 *.caffemodel
 *.pb
+Pre-Trained_Models/
 
 # Python
 __pycache__/
+.ipynb_checkpoints/

@@ -11,3 +11,4 @@ Pre-Trained_Models/
 # Python
 __pycache__/
 .ipynb_checkpoints/
+*.pyc

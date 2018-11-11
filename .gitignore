@@ -3,10 +3,12 @@
 
 static/
 samples/
+
 # ML Models
 *.caffemodel
 *.pb
 Pre-Trained_Models/
+*.model
 
 # Python
 __pycache__/

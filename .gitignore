@@ -2,7 +2,7 @@
 *.avi
 
 static/
-
+samples/
 # ML Models
 *.caffemodel
 *.pb
